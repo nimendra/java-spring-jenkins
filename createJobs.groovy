@@ -1,13 +1,4 @@
-// pipelineJob('pipelineJob') {
-//     definition {
-//         cps {
-//             script(readFileFromWorkspace('pipelineJob.groovy'))
-//             sandbox()
-//         }
-//     }
-// }
-
-pipelineJob('theme-park-job') {
+pipelineJob('theme-park-job-aws') {
     definition {
         cpsScm {
             scm {
@@ -16,6 +7,7 @@ pipelineJob('theme-park-job') {
                         url 'https://github.com/nimendra/java-spring-app.git'
                     }
                     branch 'main'
+                    scriptPath('Jenkinsfile-aws')
                 }
             }
         }
